@@ -24,26 +24,26 @@ A step-by-step guide to installing a 4.3-inch resistive touchscreen mod onto the
 ### 1. Extending the Ribbon Cable
 The ribbon cable on the touch panel is too short and requires extending. Use a scrap piece of ribbon cable and solder it directly to the connector part.
 
-<img src="Images/ribbon_extension.jpg" width="20%" alt="Ribbon Extension" />
+<img src="Images/ribbon_extension.jpg" width="40%" alt="Ribbon Extension" />
 
 Ensure you mark this ribbon cable carefully to preserve the correct polarity when connecting the controller later.
 
-<img src="Images/polarity_check.jpg" width="20%" alt="Polarity Check" />
+<img src="Images/polarity_check.jpg" width="40%" alt="Polarity Check" />
 
 Apply a piece of Kapton tape (or alternative insulating tape) over the solder joints to protect against short circuits or bending damage.
 
-<img src="Images/ribbon_tape.jpg" width="20%" alt="Ribbon Tape Protection" />
+<img src="Images/ribbon_tape.jpg" width="40%" alt="Ribbon Tape Protection" />
 
 ### 2. Feeding the Cable
 This cable needs to feed in through the same housing hole as the LCD ribbon. You will need to make a sharp right-angle fold for it to fit properly.
 
-<img src="Images/ribbon_entry.jpg" width="20%" alt="Ribbon Entry Location" />
-<img src="Images/ribbon_fold_entry.jpg" width="20%" alt="Ribbon Fold Direction" />
+<img src="Images/ribbon_entry.jpg" width="40%" alt="Ribbon Entry Location" />
+<img src="Images/ribbon_fold_entry.jpg" width="40%" alt="Ribbon Fold Direction" />
 
 ### 3. Case Assembly
 Place the 3D printed `Trackball_Spacer.stl` into the original front faceplate.
 
-<img src="Images/trackball_spacer.jpg" width="20%" alt="Trackball Spacer Installation" />
+<img src="Images/trackball_spacer.jpg" width="40%" alt="Trackball Spacer Installation" />
 
 Install the 3D printed surround onto the main frame before placing the trackball and the front face into position. Secure the assembly using the M4 bolts. 
 
@@ -58,14 +58,14 @@ Turn over the uConsole to begin working on the internal wiring.
 1. **Prep the Board:** If your controller board includes pre-installed plugs on the touch input or USB output, remove them using flush cutters or a desoldering iron.
 2. **Test Fit:** Check the controller board placement. Positioning it right under the expansion board works well, but may require trimming a tiny bit off the edge of the controller card. As long as you do not cut into any active circuit tracks, the board will be fine.
    
-   <img src="Images/board_too_long.jpg" width="20%" alt="Board Modification Fitment" />
+   <img src="Images/board_too_long.jpg" width="40%" alt="Board Modification Fitment" />
 
 3. **Soldering:** 
    * Solder the extended touch ribbon directly to the controller board.
    * Solder the 4 USB data/power wires to the controller board.
 4. **Final Tuck:** Carefully fold the ribbon cable layers so they tuck cleanly inside the case boundaries.
 
-<img src="Images/final_layout.jpg" width="20%" alt="Final Internal Layout" />
+<img src="Images/final_layout.jpg" width="40%" alt="Final Internal Layout" />
 
 ---
 
@@ -78,7 +78,7 @@ To prevent interference, disable the default OS virtual keyboard:
 1. Navigate to **Pi Menu** ➔ **Preferences** ➔ **Control Centre**.
 2. Under **Display Options**, change **On-screen Keyboard** to **Disabled**.
 
-<img src="Images/screen_keyboard.jpg" width="20%" alt="Disable OSK Settings" />
+<img src="Images/screen_keyboard.jpg" width="40%" alt="Disable OSK Settings" />
 
 ### 2. Enable USB Power via Terminal
 Open your terminal application. If you are utilizing the AIOv2 board, power up the touch controller hardware rail:
@@ -96,7 +96,7 @@ Verify that the USB controller is recognized by the operating system:
 lsusb
 ```
 
-<img src="Images/screen_lsusb.jpg" width="20%" alt="lsusb Output Verification" />
+<img src="Images/screen_lsusb.jpg" width="40%" alt="lsusb Output Verification" />
 
 ### 3. Persistent 90° Calibration Rule
 Locate your touchscreen device driver string to verify its system designation:
@@ -104,7 +104,7 @@ Locate your touchscreen device driver string to verify its system designation:
 sudo libinput list-devices
 ```
 
-<img src="Images/screen_list-devices.jpg" width="20%" alt="libinput Device Selection" />
+<img src="Images/screen_list-devices.jpg" width="40%" alt="libinput Device Selection" />
 
 Copy your hardware name (e.g., `"eGalax Inc. USB TouchController"`). Create a persistent Udev rules file to map the touch coordinates correctly for the rotated landscape panel:
 
