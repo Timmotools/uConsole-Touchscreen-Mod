@@ -7,8 +7,8 @@ A step-by-step guide to installing a 4.3-inch resistive touchscreen mod onto the
 ## 🛠️ The Hardware
 
 ### Parts Required
-* **4.3-inch Resistive Touch Panel:** 4-wire configuration (102 x 62mm). Available on [AliExpress](https://aliexpress.com).
-* **Resistive Touch Controller:** Available on [AliExpress](https://aliexpress.com).
+* **4.3-inch Resistive Touch Panel:** 4-wire configuration (102 x 62mm). Available on [AliExpress](https://a.aliexpress.com/_mMjZnBX).
+* **Resistive Touch Controller:** Available on [AliExpress](https://a.aliexpress.com/_mK2ssTT).
 * **Bolts:** 6 x 8mm M4 button head bolts.
 * **Wiring:** Wires to solder the USB touch controller to the uConsole expansion board.
 * **Extension:** Ribbon cable for extending the touch panel ribbon.
