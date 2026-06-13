@@ -2,6 +2,8 @@
 
 A step-by-step guide to installing a 4.3-inch resistive touchscreen mod onto the ClockworkPI uConsole using an AIOv2 expansion board.
 
+
+**UPDATE: Latest system upgrades break the original udev rules. updates are below on how to fix this using labwc**
 ---
 
 ## 🛠️ The Hardware
@@ -125,5 +127,30 @@ Reboot your uConsole to initialize the persistent calibration matrix:
 ```bash
 sudo reboot
 ```
+**UPDATE:**
+If the above did not work or fails to work after doing a `sudo apt update && sudo apt upgrade -y` commands then you need to update the rc.xml file instead.
 
+```bash
+sudo nano ~/.config/labwc/rc.xml
+```
+Look through the file and delete any lines with `touch` at the start. `Ctrl+k` deletes whole lines in nano.
+
+At the end of the file just before `</openbox_config>` insert the following lines
+
+```text
+  <libinput>
+    <device category="eGalax Inc. USB TouchController (USB 1-1.4.3)">
+      <calibrationMatrix>0.0 1.246571 -0.085628 -1.048012 0.0 1.018752</calibrationMatrix>
+    </device>
+  </libinput>
+```
+
+Save and exit the file (`Ctrl+X`, then `Y`, then `Enter`).
+
+Reboot your uConsole to initialize the persistent calibration matrix:
+```bash
+sudo reboot
+```
+
+### 5. Test and Enjoy!
 Test your tracking across the panel. Note that this resistive screen configuration responds best when using a precise stylus!
